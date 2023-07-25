@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Rotator</title>
+</head>
+<body>
+    <button onclick="document.getElementById('fileInput').click()">Add Image</button>
+    <input type='file' id="fileInput" style="display:none">
+    <button id="rotateLeft">Left</button>
+    <button id="rotateRight">Right</button>
+    <input type="number" id="angleInput" placeholder="Angle">
+    <br>
+    <canvas id="canvasOutput" width="400" height="400"></canvas>
+    <script defer  src="https://docs.opencv.org/4.8.0/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+    <script src="Image_Rotator.js"></script>
+</body>
+</html>
