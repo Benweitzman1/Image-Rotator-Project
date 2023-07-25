@@ -1,17 +1,56 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Image Rotator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <button class="btn" onclick="document.getElementById('fileInput').click()">Add Image</button>
+            <input type='file' id="fileInput" style="display:none">
+            <button class="btn" id="rotateLeft">Left</button>
+            <button class="btn" id="rotateRight">Right</button>
+            <input type="number" id="angleInput" placeholder="Angle">
+        </div>
+        <div class="image-container">
+            <canvas id="canvasOutput" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <script defer src="https://docs.opencv.org/4.8.0/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+    <script src="Image_Rotator.js"></script>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Image Rotator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button onclick="document.getElementById('fileInput').click()">Add Image</button>
-    <input type='file' id="fileInput" style="display:none">
-    <button id="rotateLeft">Left</button>
-    <button id="rotateRight">Right</button>
-    <input type="number" id="angleInput" placeholder="Angle">
-    <br>
-    <canvas id="canvasOutput" width="400" height="400"></canvas>
-    <script defer  src="https://docs.opencv.org/4.8.0/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+    <div class="container">
+        <div class="controls">
+            <button class="btn" onclick="document.getElementById('fileInput').click()">Add Image</button>
+            <input type="file" id="fileInput" style="display:none">
+            <button class="btn" id="rotateLeft">Left</button>
+            <button class="btn" id="rotateRight">Right</button>
+            <input type="number" id="angleInput" placeholder="Angle">
+            <input type="range" id="scaleInput" min="0.1" max="2" step="0.1" value="1">
+            <select id="filterSelect">
+                <option value="none">None</option>
+                <option value="grayscale">Grayscale</option>
+                <option value="sepia">Sepia</option>
+            </select>
+            <button class="btn" id="bringToFront">Bring to Front</button>
+            <button class="btn" id="sendToBack">Send to Back</button>
+            <button class="btn" id="saveImage">Save Image</button>
+        </div>
+        <div class="image-container">
+            <canvas id="canvasOutput" width="400" height="400" ondrop="dropImage(event)" ondragover="allowDrop(event)"></canvas>
+        </div>
+    </div>
+    <script defer src="https://docs.opencv.org/4.8.0/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
     <script src="Image_Rotator.js"></script>
 </body>
 </html>
